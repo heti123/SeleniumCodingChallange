@@ -1,5 +1,7 @@
 package com.Zoopla.qa.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -15,10 +17,10 @@ public class HomePage extends TestBase1{
 	WebElement propertyLabel;
 	
 	@FindBy(xpath="//ul[contains(@class,'listing-results')]//li[contains(@class,'srp clearfix')]//a[contains(@class,'listing-results-price')]")
-	WebElement propertyPriceList;
+	List<WebElement> propertyList;
 	
 	@FindBy(xpath="(//ul[contains(@class,'listing-results')]//li[contains(@class,'srp clearfix')]//a[contains(@class,'listing-results-price')])[5]")
-	WebElement propertyPrice;
+	WebElement selectfifthproperty;
 	
 	@FindBy(xpath="(//p[@class='top-half listing-results-marketed'])[4]")
 	WebElement propertyPrice6;
@@ -32,16 +34,15 @@ public class HomePage extends TestBase1{
 	public boolean validateHomePageLabel() {
 		 return propertyLabel.isDisplayed();
 	 }
-	//public void listofPropertyPrice() {
-	   // Dimension total = propertyPriceList.getSize();
-		//for(int i=1;i=>total;i++)
-			//System.out.println(propertyPriceList.getText());
-
+	public void printPropertyDesc() {
+	
+	}
+	  
 	 
 	public PropertyPage clickOnPropertyPrice() {
 		js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",propertyPrice6);
-		propertyPrice.click();
+		selectfifthproperty.click();
 		return new PropertyPage();
 		 
 	 }

@@ -8,8 +8,8 @@ import com.Zoopla.qa.base.TestBase1;
 
 public class AgentPage extends TestBase1 {
 	
-	@FindBy(xpath="//img[@class='agent_logo']")
-	WebElement agentLogo;
+	@FindBy(xpath="//h1[@class=\"bottom-half\"]//child::b[1]")
+	WebElement agentName;
 	
 	@FindBy(xpath="(//span[@class='agent_phone'])[2]")
 	WebElement agentPhone;
@@ -19,11 +19,11 @@ public class AgentPage extends TestBase1 {
 		PageFactory.initElements(driver, this);
 	}
 	
-	 public boolean verifyagentLogo() {
-		return agentLogo.isDisplayed();
+	 public String getAgentName() {
+		return agentName.getText();
 	 }
 	 
-	 public String verifyAgentPhone() {
+	 public String getAgentPhone() {
 		 return agentPhone.getText();
 	 }
 }

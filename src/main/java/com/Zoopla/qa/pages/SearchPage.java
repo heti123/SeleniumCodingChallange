@@ -41,7 +41,8 @@ public class SearchPage extends TestBase1 {
 			public HomePage validateSearchField(String searchtext)  {
 				WebDriverWait wait=new WebDriverWait(driver,10);
 	            wait.until(ExpectedConditions.visibilityOf(searchfield));
-	            searchfield.sendKeys(searchtext);
+	            String location= prop.getProperty("Location");
+	            searchfield.sendKeys(location);
 				searchBtn.click();
 		        return new HomePage();
 				

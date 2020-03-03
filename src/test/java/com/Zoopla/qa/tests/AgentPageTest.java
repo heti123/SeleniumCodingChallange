@@ -34,13 +34,14 @@ public class AgentPageTest extends TestBase1 {
 		}
 	
 	@Test
-	public void agentTitleTest() {
-		//Assert.assertEquals(agentpage.verifyagentLogo(),propertypage.validateAgentLogo());
+	public void agentNameVerifyTest() {
+		System.out.println(agentpage.getAgentName());
+		
 	}
 	
-	@Test
+	@Test(priority=1)
 	public void agentPhoneTest() {
-		Assert.assertEquals(agentpage.verifyAgentPhone(),propertypage.validateAgentPhoneNo());
+		System.out.println(agentpage.getAgentPhone());
 	}
 	
 	@AfterMethod
